@@ -1,7 +1,6 @@
 import React from 'react';
 import { AppRouting } from '@/components/AppRouting/AppRouting';
 import { AppBackground } from '@/components/layout/AppBackground';
-import { Header } from './components/shared/Header/Header';
 import { Sidebar } from './components/shared/Sidebar/Sidebar';
 import { AppLayout, LayoutArea } from './components/layout/AppLayout';
 
@@ -13,7 +12,6 @@ function App() {
       </LayoutArea>
       <LayoutArea area="content">
         <AppBackground>
-          <Header />
           <AppRouting />
         </AppBackground >
       </LayoutArea>

@@ -1,4 +1,6 @@
+import { routeList } from '@/components/AppRouting/AppRouting';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -7,12 +9,14 @@ const Container = styled.div`
   box-sizing: border-box;
 `;
 
-const HeadingText = styled.div`
+const HeadingLink = styled(Link)`
+  display: block;
   color: ${props => props.theme.color.textPrimary};
   font-weight: bold;
   font-size: 1.8rem;
   padding: 32px;
   padding-bottom: 0px;
+  text-decoration: none;
 `;
 
 const Content = styled.div`
@@ -21,8 +25,13 @@ const Content = styled.div`
 
 export const Sidebar = () => (
   <Container>
-    <HeadingText>Framer Motion Experiments</HeadingText>
+    <HeadingLink to="/">
+      Framer Motion Experiments
+    </HeadingLink>
     <Content>
+      {routeList.map(route => (
+        <Link to={route.path}>{route.link}</Link>
+      ))}
     </Content>
   </Container>
 );

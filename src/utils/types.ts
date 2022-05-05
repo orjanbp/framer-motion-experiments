@@ -1,7 +1,6 @@
-export interface TodoItemType {
-  id: string;
-  name: string;
-  description?: string;
-}
+export type RouteList = {
+  path: string;
+  link: string;
+  element: JSX.Element;
+}[];
 
-export type TodoList = TodoItemType[];
