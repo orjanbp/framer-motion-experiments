@@ -23,6 +23,11 @@ const Content = styled.div`
   padding: 32px;
 `;
 
+const SidebarLink = styled(Link)`
+  display: block;
+  padding: 8px 16px;
+`;
+
 export const Sidebar = () => (
   <Container>
     <HeadingLink to="/">
@@ -30,7 +35,7 @@ export const Sidebar = () => (
     </HeadingLink>
     <Content>
       {routeList.map(route => (
-        <Link to={route.path}>{route.link}</Link>
+        <SidebarLink to={route.path}>{route.link}</SidebarLink>
       ))}
     </Content>
   </Container>

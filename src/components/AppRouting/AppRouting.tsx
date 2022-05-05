@@ -3,12 +3,18 @@ import { Route, Routes } from 'react-router';
 import { RouteList } from '@/utils/types';
 import { HomePage } from '../pages/Home/HomePage';
 import { FadeOnLoadPage } from '../pages/FadeOnLoad/FadeOnLoadPage';
+import { StaggeredLoadPage } from '../pages/StaggeredLoad/StaggeredLoadPage';
 
 export const routeList: RouteList = [
   {
     path: '/fadeonload',
     link: 'Fade on Load',
     element: <FadeOnLoadPage />
+  },
+  {
+    path: '/staggeredload',
+    link: 'Staggered Load',
+    element: <StaggeredLoadPage />
   }
 ];
 
