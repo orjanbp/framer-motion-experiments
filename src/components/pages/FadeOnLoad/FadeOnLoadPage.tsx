@@ -3,14 +3,11 @@ import styled from 'styled-components';
 import { SquareBlock } from '@/components/shared/Block/SquareBlock';
 
 const Container = styled.div`
-  display: grid;
-  grid-template-rows: 1fr auto;
-  margin: auto;
-  width: 100%;
-  max-width: 800px;
-  height: calc(100vh - 48px);
-  padding: 32px;
-  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  padding: 64px 32px;
 `;
 
 export const FadeOnLoadPage = () => {
