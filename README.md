@@ -1,28 +1,6 @@
-# React To-Do Demo App
+# Framer Motion Experiments
 
-This is a repo for a todo app written to demonstrate React during a presentation. 
+This is a repo where I'm experimenting with different things that can be done using Frame Motion.
 
-It follows a pretty simple folder and data structure: 
-
-- `\components`: Visual elements used in the app.
-- `\components\AppRouting`: Single-source routing resolver.
-- `\components\layout`: High-level components for app layouting.
-- `\components\pages`: All routes used by AppRouting structured as pages.
-- `\components\shared`: Reusabled components.
-- `\store`: App-wide data storage containers.
-- `\utils`: App theme, app-wide types, utility functions, etc.
-
-### Project Stack
-
-- **Preset/Bootstrapper**: Create React App
-- **Routing**: React Router
-- **Styling:** Styled Components
-- **Animation**: Framer Motion
-- **Iconography**: React Icons
-- **Testing**: Jest + React Testing Library
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Each page in the application its a self-contained little experiment, testing out and trying different
+behaviours for myself. 
