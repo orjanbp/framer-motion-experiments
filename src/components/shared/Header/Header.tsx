@@ -11,7 +11,5 @@ const HeaderBar = styled.div`
 `;
 
 export const Header = () => (
-  <HeaderBar>
-    Framer Motion Experiments
-  </HeaderBar>
+  <HeaderBar />
 );
