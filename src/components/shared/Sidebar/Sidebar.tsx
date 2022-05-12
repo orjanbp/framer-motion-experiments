@@ -1,7 +1,7 @@
-import { routeList } from '@/components/AppRouting/AppRouting';
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import { routeList } from '@/components/AppRouting/AppRouting';
 
 const Container = styled.div`
   background-color: ${props => props.theme.color.background100};
@@ -23,20 +23,51 @@ const Content = styled.div`
   padding: 32px;
 `;
 
-const SidebarLink = styled(Link)`
-  display: block;
-  padding: 8px 16px;
+const SidebarLink = styled(Link) <{ isActive?: boolean }>`
+  display: flex;
+  align-items: stretch;
+  color: ${props => props.theme.color.textPrimary};
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+  ${props => props.isActive && css`
+    color: ${props.theme.color.primary100};
+  `};
+  &:hover {
+    background-color: ${props => props.theme.color.primary100};
+    color: ${props => props.theme.color.background100};
+    transition: all 0.2s ease;
+  }
 `;
 
-export const Sidebar = () => (
-  <Container>
-    <HeadingLink to="/">
-      Framer Motion Experiments
-    </HeadingLink>
-    <Content>
-      {routeList.map(route => (
-        <SidebarLink to={route.path}>{route.link}</SidebarLink>
-      ))}
-    </Content>
-  </Container>
-);
+const CurrentPageMarker = styled.div<{ isActive?: boolean }>`
+  width: 4px;
+  border-radius: 2px;
+  margin: 4px 0px;
+  ${props => props.isActive && css`
+    background-color: ${props => props.theme.color.primary100};
+  `}
+`;
+
+const SidebarText = styled.div`
+  padding: 12px 12px;
+`;
+
+export const Sidebar = () => {
+  const { pathname } = useLocation();
+  return (
+    <Container>
+      <HeadingLink to="/">
+        Framer Motion Experiments
+      </HeadingLink>
+      <Content>
+        {routeList.map(route => (
+          <SidebarLink to={route.path} isActive={pathname === route.path}>
+            <CurrentPageMarker isActive={pathname === route.path} />
+            <SidebarText>{route.link}</SidebarText>
+          </SidebarLink>
+        ))}
+      </Content>
+    </Container>
+  );
+};
