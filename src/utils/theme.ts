@@ -10,7 +10,9 @@ export const defaultTheme = {
     primary60: '#e56a05',
     border: '#879fab',
     textPrimary: '#212121',
-    textSecondary: '#878787'
+    textSecondary: '#878787',
+    buttonHover: '#3f515a26',
+    buttonActive: '#3f515a4d',
   },
   shadow: {
     low: '0 2px 4px rgba(0,0,0,0.12), 0 3px 6px rgba(0,0,0,0.19)',

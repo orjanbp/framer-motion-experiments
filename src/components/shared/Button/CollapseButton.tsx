@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { IoCloseOutline } from 'react-icons/io5';
+import styled, { css } from 'styled-components';
+import { IoChevronDownOutline } from 'react-icons/io5';
 
 const StyledButton = styled.button`
   display: flex;
@@ -20,16 +20,21 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledClose = styled(IoCloseOutline)`
+const StyledChevron = styled(IoChevronDownOutline) <{ isCollapsed: boolean }>`
   width: 24px;
   height: 24px;
+  transition: transform 0.1s ease;
+  ${props => props.isCollapsed && css`
+    transform: scaleY(-1);
+  `}
 `;
 
 interface Props {
   onClick: () => void;
+  isCollapsed: boolean;
 }
-export const CloseButton = ({ onClick }: Props) => (
+export const CollapseButton = ({ onClick, isCollapsed }: Props) => (
   <StyledButton onClick={onClick}>
-    <StyledClose />
+    <StyledChevron isCollapsed={isCollapsed} />
   </StyledButton>
 );

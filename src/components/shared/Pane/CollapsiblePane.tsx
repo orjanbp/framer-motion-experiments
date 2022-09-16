@@ -1,7 +1,7 @@
 import { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
 import { AnimHeight } from '../Animations/AnimHeight';
-import { CloseButton } from '../Button/CloseButton';
+import { CollapseButton } from '../Button/CollapseButton';
 
 const Container = styled.div`
   background-color: ${props => props.theme.color.background100};
@@ -18,11 +18,11 @@ const PaneHeader = styled.div`
   justify-content: space-between;
   background-color: ${props => props.theme.color.background90};
   height: 40px;
-  padding: 0px 8px;
+  padding: 0px 4px;
 `;
 
 const PaneTitle = styled.div`
-  padding: 0px 8px;
+  padding: 0px 12px;
   font-weight: 700;
 `;
 
@@ -44,7 +44,7 @@ export const CollapsiblePane = ({ children }: PropsWithChildren<Props>) => {
     <Container>
       <PaneHeader>
         <PaneTitle>Pane Title</PaneTitle>
-        <CloseButton
+        <CollapseButton
           isCollapsed={isCollapsed}
           onClick={toggleCollapse}
         />

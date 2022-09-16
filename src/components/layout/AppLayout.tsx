@@ -17,5 +17,5 @@ export const PageWrapper = styled.div`
 `;
 
 export const PageContent = styled.div`
-  padding: 64px 0px;
+  padding: 32px 0px;
 `;
