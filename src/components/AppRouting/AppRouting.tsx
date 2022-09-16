@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
 import { RouteList } from '@/utils/types';
-import { HomePage } from '../pages/Home/HomePage';
-import { FadeOnLoadPage } from '../pages/FadeOnLoad/FadeOnLoadPage';
-import { StaggeredLoadPage } from '../pages/StaggeredLoad/StaggeredLoadPage';
+import { HomePage } from '../pages/HomePage';
+import { FadeOnLoadPage } from '../pages/FadeOnLoadPage';
+import { StaggeredLoadPage } from '../pages/StaggeredLoadPage';
+import { CollapsiblePanePage } from '../pages/CollapsiblePanePage';
 
 export const routeList: RouteList = [
   {
@@ -15,6 +16,11 @@ export const routeList: RouteList = [
     path: '/staggeredload',
     link: 'Staggered Load',
     element: <StaggeredLoadPage />
+  },
+  {
+    path: '/collapsiblepane',
+    link: 'Collapsible Pane',
+    element: <CollapsiblePanePage />
   }
 ];
 
