@@ -1,19 +1,15 @@
+import { PageWrapper } from '@/components/layout/AppLayout';
+import { Description } from '@/components/shared/Information';
 import React from 'react';
-import styled from 'styled-components';
-
-const Container = styled.div`
-  display: grid;
-  grid-template-rows: 1fr auto;
-  margin: auto;
-  width: 100%;
-  max-width: 800px;
-  height: calc(100vh - 48px);
-  padding: 32px;
-  box-sizing: border-box;
-`;
 
 export const HomePage = () => (
-  <Container>
-    Hello World
-  </Container>
+  <PageWrapper>
+    <Description title="Framer Motion Experiments">
+      <p>
+        This is a collection of sample experiments for implementing small, reusable Framer Motion animations
+        that can easily be wrapped around a set of components. The main focus is to explore ways to use
+        Framer Motion for transitions and micro-interactions.
+      </p>
+    </Description>
+  </PageWrapper>
 );

@@ -3,19 +3,19 @@ import styled from 'styled-components';
 import { SquareBlock } from '@/components/shared/Block/SquareBlock';
 import { AnimStaggeredLoad, FadeStaggeredChild } from '@/components/shared/Animations/AnimStaggeredLoad';
 import { Description } from '@/components/shared/Information';
+import { PageContent, PageWrapper } from '@/components/layout/AppLayout';
 
-const Container = styled(AnimStaggeredLoad)`
+const StyledStaggeredLoad = styled(AnimStaggeredLoad)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  padding: 64px 32px;
 `;
 
 export const StaggeredLoadPage = () => {
   const mapToBlocks = Array.from(Array(10).keys());
   return (
-    <div>
+    <PageWrapper>
       <Description title="Staggered Load">
         <p>
           Load in a parent component that has been set up to stagger the animations of child components.
@@ -23,13 +23,15 @@ export const StaggeredLoadPage = () => {
           delay the rendering of each child component so they happen in succession.
         </p>
       </Description>
-      <Container>
-        {mapToBlocks.map((_, i) => (
-          <FadeStaggeredChild key={i}>
-            <SquareBlock />
-          </FadeStaggeredChild>
-        ))}
-      </Container>
-    </div>
+      <PageContent>
+        <StyledStaggeredLoad>
+          {mapToBlocks.map((_, i) => (
+            <FadeStaggeredChild key={i}>
+              <SquareBlock />
+            </FadeStaggeredChild>
+          ))}
+        </StyledStaggeredLoad>
+      </PageContent>
+    </PageWrapper>
   );
 };

@@ -2,9 +2,8 @@ import React, { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  padding: 48px;
-  max-width: 900px;
-  margin: auto;
+  padding: 48px 0px;
+  margin: 0px auto;
 `;
 
 const Heading = styled.h1`
