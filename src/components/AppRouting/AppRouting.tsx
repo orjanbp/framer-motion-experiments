@@ -6,7 +6,7 @@ import { FadeOnLoadPage } from '../pages/FadeOnLoadPage';
 import { StaggeredLoadPage } from '../pages/StaggeredLoadPage';
 import { CollapsiblePanePage } from '../pages/CollapsiblePanePage';
 
-export const routeList: RouteList = [
+export const onLoadRoutes: RouteList = [
   {
     path: '/fadeonload',
     link: 'Fade on Load',
@@ -17,6 +17,9 @@ export const routeList: RouteList = [
     link: 'Staggered Load',
     element: <StaggeredLoadPage />
   },
+];
+
+export const onClickRoutes: RouteList = [
   {
     path: '/collapsiblepane',
     link: 'Collapsible Pane',
@@ -31,7 +34,7 @@ export const routeList: RouteList = [
 export const AppRouting = () => (
   <Routes>
     <Route path="/" element={<HomePage />} />
-    {routeList.map(route => (
+    {onLoadRoutes.map(route => (
       <Route path={route.path} element={route.element} />
     ))}
   </Routes>
