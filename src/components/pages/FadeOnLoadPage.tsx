@@ -6,7 +6,7 @@ import { AnimFadeOnLoad } from '@/components/shared/Animations/AnimFadeOnLoad';
 import { Description } from '@/components/shared/Information';
 import { PageContent, PageWrapper } from '@/components/layout/AppLayout';
 
-const StyledFadeOnLoad = styled(motion.div)`
+const AnimFadeOuter = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -25,13 +25,13 @@ export const FadeOnLoadPage = () => {
         </p>
       </Description>
       <PageContent>
-        <StyledFadeOnLoad>
+        <AnimFadeOuter>
           {mapToBlocks.map((_, i) => (
             <AnimFadeOnLoad key={i}>
               <SquareBlock />
             </AnimFadeOnLoad>
           ))}
-        </StyledFadeOnLoad>
+        </AnimFadeOuter>
       </PageContent>
     </PageWrapper>
   );

@@ -33,7 +33,7 @@ export const AnimStaggeredLoad = ({ className, children }: PropsWithChildren<{ c
   </motion.div >
 );
 
-export const FadeStaggeredChild = ({ children }: PropsWithChildren<{}>) => (
+export const StaggeredLoadChild = ({ children }: PropsWithChildren<{}>) => (
   <motion.div variants={childLoadAnim}>
     {children}
   </motion.div>

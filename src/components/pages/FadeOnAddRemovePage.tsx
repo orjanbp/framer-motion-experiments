@@ -10,7 +10,7 @@ const PageContentWithSpace = styled(PageContent)`
   }
 `
 
-export const CollapsiblePanePage = () => (
+export const FadeOnAddRemovePage = () => (
   <PageWrapper>
     <Description title="Collapsible Pane">
       <p>

@@ -5,7 +5,9 @@ import { HomePage } from '../pages/HomePage';
 import { FadeOnLoadPage } from '../pages/FadeOnLoadPage';
 import { StaggeredLoadPage } from '../pages/StaggeredLoadPage';
 import { CollapsiblePanePage } from '../pages/CollapsiblePanePage';
+import { FadeOnAddRemovePage } from '../pages/FadeOnAddRemovePage';
 
+// Routes for experiments that animate on page load 
 export const onLoadRoutes: RouteList = [
   {
     path: '/fadeonload',
@@ -19,11 +21,17 @@ export const onLoadRoutes: RouteList = [
   },
 ];
 
+// Route for experiments that animate on user actions
 export const onClickRoutes: RouteList = [
   {
     path: '/collapsiblepane',
     link: 'Collapsible Pane',
     element: <CollapsiblePanePage />
+  },
+  {
+    path: '/fadeonaddremove',
+    link: 'Fade on Add / Remove',
+    element: <FadeOnAddRemovePage />
   }
 ];
 
@@ -34,8 +42,7 @@ export const onClickRoutes: RouteList = [
 export const AppRouting = () => (
   <Routes>
     <Route path="/" element={<HomePage />} />
-    {onLoadRoutes.map(route => (
-      <Route path={route.path} element={route.element} />
-    ))}
+    {onLoadRoutes.map(route => <Route path={route.path} element={route.element} />)}
+    {onClickRoutes.map(route => <Route path={route.path} element={route.element} />)}
   </Routes>
 );

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { SquareBlock } from '@/components/shared/Block/SquareBlock';
-import { AnimStaggeredLoad, FadeStaggeredChild } from '@/components/shared/Animations/AnimStaggeredLoad';
+import { AnimStaggeredLoad, StaggeredLoadChild } from '@/components/shared/Animations/AnimStaggeredLoad';
 import { Description } from '@/components/shared/Information';
 import { PageContent, PageWrapper } from '@/components/layout/AppLayout';
 
-const StyledStaggeredLoad = styled(AnimStaggeredLoad)`
+const StyledAnimStaggered = styled(AnimStaggeredLoad)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -24,13 +24,13 @@ export const StaggeredLoadPage = () => {
         </p>
       </Description>
       <PageContent>
-        <StyledStaggeredLoad>
+        <StyledAnimStaggered>
           {mapToBlocks.map((_, i) => (
-            <FadeStaggeredChild key={i}>
+            <StaggeredLoadChild key={i}>
               <SquareBlock />
-            </FadeStaggeredChild>
+            </StaggeredLoadChild>
           ))}
-        </StyledStaggeredLoad>
+        </StyledAnimStaggered>
       </PageContent>
     </PageWrapper>
   );
