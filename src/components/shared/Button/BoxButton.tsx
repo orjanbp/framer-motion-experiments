@@ -38,10 +38,10 @@ const StyledButton = styled.button<{ variant: ButtonVariants }>`
     background-color: ${props => props.theme.color.background100};
     border: 1px solid ${props => props.theme.color.border};
     &:hover {
-      background-color: ${props => props.theme.color.background80};
+      background-color: ${props => props.theme.color.background90};
     }
     &:active {
-      background-color: ${props => props.theme.color.background60};
+      background-color: ${props => props.theme.color.background80};
     }
   `}
 `;

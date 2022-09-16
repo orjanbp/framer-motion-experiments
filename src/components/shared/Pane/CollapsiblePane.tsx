@@ -16,7 +16,7 @@ const PaneHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: ${props => props.theme.color.background80};
+  background-color: ${props => props.theme.color.background90};
   height: 40px;
   padding: 0px 8px;
 `;

@@ -13,10 +13,10 @@ const StyledButton = styled.button`
   border-radius: 20px;
   transition: background-color 0.1s ease;
   &:hover {
-    background-color: ${props => props.theme.color.background60};
+    background-color: ${props => props.theme.color.background80};
   }
   &:active {
-    background-color: ${props => props.theme.color.background40};
+    background-color: ${props => props.theme.color.background70};
   }
 `;
 

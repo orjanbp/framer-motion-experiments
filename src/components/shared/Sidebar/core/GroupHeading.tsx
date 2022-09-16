@@ -6,7 +6,7 @@ const Container = styled.div`
 
 const GroupDivider = styled.div`
   height: 1px;
-  background-color: ${props => props.theme.color.background60};
+  background-color: ${props => props.theme.color.background90};
   margin: 16px 0px 24px;
 `;
 

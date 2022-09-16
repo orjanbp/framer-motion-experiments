@@ -1,13 +1,14 @@
 export const defaultTheme = {
   color: {
     background100: '#FFFFFF',
-    background80: '#f5f5f5',
-    background60: '#e0e0e0',
-    background40: '#bdbdbd',
+    background90: '#e1e7ea',
+    background80: '#c4cfd4',
+    background70: '#a5b7c0',
+    background60: '#879fab',
     primary100: '#fb9644',
     primary80: '#fa811e',
     primary60: '#e56a05',
-    border: '#bdbdbd',
+    border: '#879fab',
     textPrimary: '#212121',
     textSecondary: '#878787'
   },
