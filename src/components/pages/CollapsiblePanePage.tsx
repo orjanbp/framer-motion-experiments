@@ -1,29 +1,32 @@
 import React from 'react';
-import styled from 'styled-components';
-import { AnimStaggeredLoad } from '@/components/shared/Animations/AnimStaggeredLoad';
 import { Description } from '@/components/shared/Information';
 import { PageContent, PageWrapper } from '@/components/layout/AppLayout';
 import { CollapsiblePane } from '../shared/Pane/CollapsiblePane';
+import styled from 'styled-components';
 
-const StyledStaggeredLoad = styled(AnimStaggeredLoad)`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-`;
+const PageContentWithSpace = styled(PageContent)`
+  & > * + * {
+    margin-top: 32px;
+  }
+`
 
 export const CollapsiblePanePage = () => (
   <PageWrapper>
     <Description title="Collapsible Pane">
       <p>
         Present a pane with a toggle button that can be clicked to collapse and expand,
-        with an animated transition between the two states.
+        with an animated transition between the two states. In this example, the animation
+        controls are entirely within the Pane component being rendered, with the motion
+        state between open and closed handled by a boolean State.
       </p>
     </Description>
-    <PageContent>
+    <PageContentWithSpace>
       <CollapsiblePane>
-        Content within pane element.
+        Content within first pane element.
       </CollapsiblePane>
-    </PageContent>
+      <CollapsiblePane>
+        Content within second pane element.
+      </CollapsiblePane>
+    </PageContentWithSpace>
   </PageWrapper>
 );

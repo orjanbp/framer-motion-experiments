@@ -1,12 +1,12 @@
 import { PropsWithChildren, useState } from 'react';
 import styled from 'styled-components';
+import { AnimHeight } from '../Animations/AnimHeight';
 import { CloseButton } from '../Button/CloseButton';
 
 const Container = styled.div`
   background-color: ${props => props.theme.color.background100};
   color: ${props => props.theme.color.textPrimary};
   width: 100%;
-  height: 300px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: ${props => props.theme.shadow.low};
@@ -29,6 +29,7 @@ const PaneTitle = styled.div`
 const PaneInner = styled.div`
   padding: 16px;
   box-sizing: border-box;
+  height: 240px;
 `;
 
 interface Props {
@@ -48,9 +49,11 @@ export const CollapsiblePane = ({ children }: PropsWithChildren<Props>) => {
           onClick={toggleCollapse}
         />
       </PaneHeader>
-      <PaneInner>
-        {children}
-      </PaneInner>
+      <AnimHeight animClosed={isCollapsed}>
+        <PaneInner>
+          {children}
+        </PaneInner>
+      </AnimHeight>
     </Container>
   );
 };
