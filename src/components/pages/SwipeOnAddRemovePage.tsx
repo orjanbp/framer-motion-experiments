@@ -4,19 +4,15 @@ import { PageContent, PageWrapper } from '@/components/layout/AppLayout';
 import styled from 'styled-components';
 import { ListBlockWithClose } from '../shared/Block/ListBlockWithClose';
 import { BoxButton } from '../shared/Button/BoxButton';
+import { AnimatePresence } from 'framer-motion';
+import { AnimSwipeEnterExit } from '../shared/Animations/AnimSwipeEnterExit';
 
 const ButtonWrapper = styled.div`
   margin-top: 32px;
   margin-bottom: 16px;
 `;
 
-const SpacedList = styled.div`
-  & > * + * {
-    margin-top: 16px;
-  }
-`
-
-export const FadeOnAddRemovePage = () => {
+export const SwipeOnAddRemovePage = () => {
   const [totalAdded, setTotalAdded] = useState<number>(1);
   const [elementList, setElementList] = useState<string[]>(['List Item 1']);
 
@@ -31,7 +27,7 @@ export const FadeOnAddRemovePage = () => {
 
   return (
     <PageWrapper>
-      <Description title="Fade on Add / Remove">
+      <Description title="Swipe on Add / Remove">
         <p>
           Present a list of elements that can be expanded by clicking a button, which will then
           add a new element to the top of the list. When a new element is added, it animated onto
@@ -43,11 +39,13 @@ export const FadeOnAddRemovePage = () => {
         </ButtonWrapper>
       </Description>
       <PageContent>
-        <SpacedList>
+        <AnimatePresence>
           {elementList.map(element => (
-            <ListBlockWithClose name={element} onClick={() => handleClose(element)} />
+            <AnimSwipeEnterExit key={element}>
+              <ListBlockWithClose name={element} onClick={() => handleClose(element)} />
+            </AnimSwipeEnterExit>
           ))}
-        </SpacedList>
+        </AnimatePresence>
       </PageContent>
     </PageWrapper>
   );

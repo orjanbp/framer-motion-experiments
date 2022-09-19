@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { CloseButton } from '../Button/CloseButton';
 
-const Container = styled.div`
+const Wrapper = styled.div`
+  padding-bottom: 16px;
+`;
+
+const Element = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,8 +29,10 @@ interface Props {
   onClick: () => void;
 }
 export const ListBlockWithClose = ({ name, onClick }: Props) => (
-  <Container>
-    <BlockTitle>{name}</BlockTitle>
-    <CloseButton onClick={onClick} />
-  </Container>
+  <Wrapper>
+    <Element>
+      <BlockTitle>{name}</BlockTitle>
+      <CloseButton onClick={onClick} />
+    </Element>
+  </Wrapper>
 );

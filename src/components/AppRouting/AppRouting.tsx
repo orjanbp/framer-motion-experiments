@@ -5,7 +5,7 @@ import { HomePage } from '../pages/HomePage';
 import { FadeOnLoadPage } from '../pages/FadeOnLoadPage';
 import { StaggeredLoadPage } from '../pages/StaggeredLoadPage';
 import { CollapsiblePanePage } from '../pages/CollapsiblePanePage';
-import { FadeOnAddRemovePage } from '../pages/FadeOnAddRemovePage';
+import { SwipeOnAddRemovePage } from '../pages/SwipeOnAddRemovePage';
 
 // Routes for experiments that animate on page load 
 export const onLoadRoutes: RouteList = [
@@ -31,7 +31,7 @@ export const onClickRoutes: RouteList = [
   {
     path: '/fadeonaddremove',
     link: 'Fade on Add / Remove',
-    element: <FadeOnAddRemovePage />
+    element: <SwipeOnAddRemovePage />
   }
 ];
 
