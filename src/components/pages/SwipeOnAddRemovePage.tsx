@@ -6,8 +6,9 @@ import { ListBlockWithClose } from '../shared/Block/ListBlockWithClose';
 import { BoxButton } from '../shared/Button/BoxButton';
 import { AnimatePresence } from 'framer-motion';
 import { AnimSwipeEnterExit } from '../shared/Animations/AnimSwipeEnterExit';
+import { ButtonGroup } from '../shared/Button/ButtonGroup';
 
-const ButtonWrapper = styled.div`
+const StyledButtonGroup = styled(ButtonGroup)`
   margin-top: 32px;
   margin-bottom: 16px;
 `;
@@ -25,6 +26,10 @@ export const SwipeOnAddRemovePage = () => {
     setElementList(elementList.filter(el => el !== element));
   };
 
+  const handleCloseAll = () => {
+    setElementList([]);
+  };
+
   return (
     <PageWrapper>
       <Description title="Swipe on Add / Remove">
@@ -34,9 +39,10 @@ export const SwipeOnAddRemovePage = () => {
           the page. Each element is then able to be removed from the list by clicking on its
           respective close button.
         </p>
-        <ButtonWrapper>
+        <StyledButtonGroup>
           <BoxButton text="Add New Item" onClick={handleAdd} />
-        </ButtonWrapper>
+          <BoxButton text="Remove All Items" variant="secondary" onClick={handleCloseAll} />
+        </StyledButtonGroup>
       </Description>
       <PageContent>
         <AnimatePresence>

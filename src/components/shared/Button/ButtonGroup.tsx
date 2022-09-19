@@ -17,9 +17,10 @@ const Wrapper = styled.div<WrapperProps>`
 interface Props extends PropsWithChildren<{}> {
   paddingTop?: string;
   alignRight?: boolean;
+  className?: string;
 }
-export const ButtonGroup = ({ children, paddingTop, alignRight = false }: Props) => (
-  <Wrapper paddingTop={paddingTop} alignRight={alignRight}>
+export const ButtonGroup = ({ children, paddingTop, alignRight = false, className }: Props) => (
+  <Wrapper paddingTop={paddingTop} alignRight={alignRight} className={className}>
     {children}
   </Wrapper>
 );
